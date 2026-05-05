@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #adc6ff;
+  --color-on-secondary-container: #b4b5b5;
+  --color-on-surface-variant: #c1c6d7;
+  --color-on-tertiary-fixed-variant: #474649;
+  --color-on-error: #690005;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-variant: #353534;
+  --color-on-surface: #e5e2e1;
+  --color-secondary-fixed: #e2e2e2;
+  --color-inverse-on-surface: #313030;
+  --color-error-container: #93000a;
+  --color-on-secondary-fixed-variant: #454747;
+  --color-on-tertiary-fixed: #1b1b1d;
+  --color-primary-fixed: #d8e2ff;
+  --color-on-primary-fixed: #001a41;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-on-error-container: #ffdad6;
+  --color-on-tertiary: #303032;
+  --color-secondary: #c6c6c7;
+  --color-tertiary-fixed: #e4e2e4;
+  --color-secondary-fixed-dim: #c6c6c7;
+  --color-on-background: #e5e2e1;
+  --color-on-primary-fixed-variant: #004493;
+  --color-outline-variant: #414755;
+  --color-on-tertiary-container: #2a292b;
+  --color-on-secondary-fixed: #1a1c1c;
+  --color-tertiary-fixed-dim: #c8c6c8;
+  --color-on-secondary: #2f3131;
+  --color-surface-container: #201f1f;
+  --color-tertiary: #c8c6c8;
+  --color-error: #ffb4ab;
+  --color-primary-container: #4b8eff;
+  --color-primary-fixed-dim: #adc6ff;
+  --color-surface-dim: #131313;
+  --color-surface: #131313;
+  --color-on-primary-container: #00285c;
+  --color-inverse-surface: #e5e2e1;
+  --color-secondary-container: #454747;
+  --color-outline: #8b90a0;
+  --color-background: #131313;
+  --color-tertiary-container: #929092;
+  --color-inverse-primary: #005bc1;
+  --color-surface-tint: #adc6ff;
+  --color-surface-container-highest: #353534;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-bright: #3a3939;
+  --color-on-primary: #002e69;
+
+  --radius-default: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+
+  --spacing-margin: 48px;
+  --spacing-gutter: 24px;
+  --spacing-stack-md: 24px;
+  --spacing-container-max: 1280px;
+  --spacing-section-gap: 50px;
+  --spacing-stack-sm: 12px;
+
+  --font-inter: 'Inter', sans-serif;
+}
+
+@layer base {
+  html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-color: #050505;
+    color: #e5e2e1;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .glass-border {
+    border-image: linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0.02)) 1;
+  }
+  .hero-gradient {
+    background: radial-gradient(circle at 50% 50%, rgba(0, 122, 255, 0.1) 0%, transparent 70%);
+  }
+  .text-gradient {
+    background: linear-gradient(to right, #adc6ff, #4b8eff, #adc6ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 4s linear infinite;
+  }
+  .glass-card-hover {
+    transition: all 0.4s ease;
+  }
+  .glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(173, 198, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 122, 255, 0.15);
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+
+.border-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, #4b8eff, transparent 30%);
+  animation: rotate-glow 4s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes rotate-glow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
