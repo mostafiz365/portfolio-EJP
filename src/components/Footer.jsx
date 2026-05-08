@@ -14,11 +14,11 @@ const Footer = () => {
             <p className="text-xl text-on-surface-variant max-w-md leading-relaxed mb-10">
               I'm always open to discussing new projects, creative ideas or original visions.
             </p>
-            <a 
-              href="mailto:hello@mostafiz.com" 
+            <a
+              href="mailto:rahmanmostafiz365@gmail.com"
               className="text-2xl md:text-3xl font-medium text-white hover:text-primary-container transition-colors underline underline-offset-8 decoration-white/20 hover:decoration-primary-container"
             >
-              hello@mostafiz.com
+              rahmanmostafiz365@gmail.com
             </a>
           </div>
 
@@ -63,7 +63,7 @@ const Footer = () => {
               © 2024 MOSTAFIZ. DESIGNED BY HAND.
             </span>
           </div>
-          
+
           <div className="flex gap-8">
             <button className="text-xs text-on-surface-variant hover:text-white transition-colors uppercase tracking-widest font-bold">Privacy Policy</button>
             <button className="text-xs text-on-surface-variant hover:text-white transition-colors uppercase tracking-widest font-bold">Terms of Use</button>
