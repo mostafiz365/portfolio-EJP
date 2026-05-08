@@ -61,7 +61,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden pt-24 md:pt-32 pb-20">
+    <section className="relative overflow-hidden pt-32 md:pt-44 pb-20">
       {/* Hero Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] hero-gradient pointer-events-none z-0"></div>
 
@@ -87,28 +87,58 @@ const Hero = () => {
               I'm a passionate Junior Front-End Developer dedicated to crafting clean, responsive, and user-friendly web experiences. Focused on building modern web applications with React and Next.js.
             </p>
 
-            <div ref={ctaRef} className="flex flex-wrap gap-4 pt-4">
-              <button className="px-10 py-5 bg-primary-container text-on-primary-container rounded-full text-label-sm font-bold flex items-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-[0_0_30px_rgba(0,122,255,0.4)] group overflow-hidden relative border-glow">
-                <span className="relative z-10">Let's Connect</span>
-                <span className="material-symbols-outlined text-sm relative z-10 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </button>
-              <button className="px-10 py-5 bg-white/5 border border-white/10 text-white rounded-full text-label-sm font-bold backdrop-blur-sm hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,122,255,0.2)] transition-all active:scale-95">
-                See My Work
-              </button>
+            <div ref={ctaRef} className="flex flex-wrap items-center gap-5 pt-4">
+              {/* Download Resume Button */}
+              <a 
+                href="#" 
+                download 
+                className="px-8 py-4 bg-primary-container text-on-primary-container rounded-full text-label-sm font-bold flex items-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-[0_0_30px_rgba(0,122,255,0.3)] group overflow-hidden relative border-glow opacity-0"
+              >
+                <span className="relative z-10">Download Resume</span>
+                <span className="material-symbols-outlined text-sm relative z-10 group-hover:translate-y-1 transition-transform">download</span>
+              </a>
+
+              {/* Social Links - Individual children for GSAP stagger */}
+              <a 
+                href="https://www.linkedin.com/in/mostafiz365" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-14 h-14 bg-white/5 border border-white/10 text-white rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,122,255,0.2)] transition-all active:scale-95 group opacity-0"
+                title="LinkedIn"
+              >
+                <img 
+                  src="https://skillicons.dev/icons?i=linkedin" 
+                  alt="LinkedIn" 
+                  className="w-6 h-6 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
+                />
+              </a>
+              <a 
+                href="https://github.com/mostafiz365" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-14 h-14 bg-white/5 border border-white/10 text-white rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,122,255,0.2)] transition-all active:scale-95 group opacity-0"
+                title="GitHub"
+              >
+                <img 
+                  src="https://skillicons.dev/icons?i=github" 
+                  alt="GitHub" 
+                  className="w-6 h-6 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
+                />
+              </a>
             </div>
           </div>
 
           {/* Right: Visual */}
           <div className="relative flex justify-center lg:justify-end">
-            <div ref={visualRef} className="relative w-[280px] h-[280px] md:w-[380px] md:h-[380px]">
-              <div className="absolute inset-0 rounded-[2rem] border-4 border-white/5 overflow-hidden shadow-2xl rotate-3 group hover:rotate-0 transition-transform duration-700">
+            <div ref={visualRef} className="relative w-[280px] h-[330px] md:w-[380px] md:h-[430px]">
+              <div className="absolute inset-0 rounded-[3rem] border-4 border-white/5 overflow-hidden shadow-2xl rotate-3 group hover:rotate-0 transition-transform duration-700">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-transparent z-10"></div>
                 <Image
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                  className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
                   alt="Mostafizur Rahman"
                   src={HeroImg}
-                  width={400}
-                  height={400}
+                  width={500}
+                  height={550}
                 />
               </div>
               <div className="absolute -inset-4 border border-white/10 rounded-[2.5rem] -z-10 animate-pulse"></div>

@@ -8,8 +8,8 @@ const About = () => {
   return (
     <section id="about" className="max-w-container-max mx-auto px-8 py-section-gap">
       <div className="flex flex-col gap-stack-sm mb-10 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">About</h2>
-        <p className="text-sm uppercase tracking-[0.2em] text-on-surface-variant font-medium">My Introduction</p>
+        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">About  Me</h2>
+        {/* <p className="text-sm uppercase tracking-[0.2em] text-on-surface-variant font-medium">My Introduction</p> */}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -38,10 +38,10 @@ const About = () => {
         {/* Right: Content */}
         <div className="flex flex-col space-y-8">
           {/* Stats Cards */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
               { icon: 'history_edu', title: 'Experience', sub: '1+ Year Learning' },
-              { icon: 'code_blocks', title: 'Projects', sub: '10+ Completed' },
+              { icon: 'code_blocks', title: 'Projects', sub: '12+ Completed' },
               { icon: 'terminal', title: 'Stack', sub: '10+ Technologies' }
             ].map((stat, i) => (
               <motion.div
@@ -67,7 +67,8 @@ const About = () => {
             viewport={{ once: true }}
             className="text-lg text-on-surface-variant leading-relaxed"
           >
-            I am a Junior Front-End Developer with a strong foundation in HTML, CSS, and JavaScript. I love bringing creative designs to life through code and am constantly learning new technologies like React, Next.js, and Tailwind CSS to build better, more accessible web interfaces.
+            I’m a passionate and self-motivated web developer who enjoys building modern, responsive, and user-friendly web applications. My primary focus is frontend development, where I work with technologies like React and JavaScript to create clean and interactive user experiences. At the same time, I’m continuously learning backend and full-stack development using Node.js, Express.js, and MongoDB.
+            I enjoy solving problems, writing clean code, and exploring new technologies that help me grow as a developer. Beyond programming, I love traveling, reading books, playing sports, and learning new things. I’m a disciplined, hardworking, and ambitious person who believes in continuous improvement and consistency. My goal is to become a skilled full-stack developer and contribute to meaningful real-world projects.
           </motion.p>
 
           {/* Button */}
