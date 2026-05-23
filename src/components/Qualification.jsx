@@ -23,15 +23,10 @@ const education = [
 
 const experience = [
   {
-    title: 'Front-End Developer',
-    subtitle: 'Freelance / Projects',
-    date: '2023 - Present',
-  },
-  {
-    title: 'Web Design Intern',
-    subtitle: 'Tech Solutions',
-    date: '2022 - 2023',
-  },
+    title: 'Junior Accountant',
+    subtitle: 'Rose Cafe Bangladesh Ltd.',
+    date: 'May 2025 - August 2025',
+  }
 ];
 
 const Qualification = () => {

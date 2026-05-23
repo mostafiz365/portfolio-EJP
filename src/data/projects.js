@@ -1,5 +1,17 @@
 export const projects = [
   {
+    id: "ideavault",
+    title: "IdeaVault – Startup Platform",
+    category: "Full-Stack • Startup Sharing",
+    desc: "A premium full-stack startup idea sharing platform. Users can explore innovative ideas, share their own startup concepts, interact with others through comments, and manage their personal ideas and activities under a secure ecosystem.",
+    img: "/assets/projects/ideavault_final.png",
+    live: "https://ideavault-client-website.vercel.app",
+    github: "https://github.com/mostafiz365/ideavault-client-website",
+    stack: ["Next.js", "React.js", "Tailwind CSS", "HeroUI", "Better Auth", "JWT", "Node.js", "Express.js", "MongoDB"],
+    challenges: "Integrating secure authentication flows using Better Auth alongside JWT route protection across standard and dynamic views was a major challenge. Syncing instant notifications, keeping UI elements fully responsive with HeroUI, and building an edit/delete-supported interactive comment stream required deep state management.",
+    improvements: "The next development steps include implementing a real-time instant chat system between co-founders using WebSockets, integrating stripe-based pledge/funding support for promising startups, and adding AI-powered matching for co-founder compatibility based on profiles."
+  },
+  {
     id: "digitools",
     title: "DigiTools – Digital Marketplace",
     category: "Full-Stack • Digital Commerce",

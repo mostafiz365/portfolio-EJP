@@ -89,9 +89,9 @@ const Hero = () => {
 
             <div ref={ctaRef} className="flex flex-wrap items-center gap-5 pt-4">
               {/* Download Resume Button */}
-              <a 
-                href="#" 
-                download 
+              <a
+                href="#"
+                download
                 className="px-8 py-4 bg-primary-container text-on-primary-container rounded-full text-label-sm font-bold flex items-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-[0_0_30px_rgba(0,122,255,0.3)] group overflow-hidden relative border-glow opacity-0"
               >
                 <span className="relative z-10">Download Resume</span>
@@ -99,30 +99,30 @@ const Hero = () => {
               </a>
 
               {/* Social Links - Individual children for GSAP stagger */}
-              <a 
-                href="https://www.linkedin.com/in/mostafiz365" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/mostafiz365"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-14 h-14 bg-white/5 border border-white/10 text-white rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,122,255,0.2)] transition-all active:scale-95 group opacity-0"
                 title="LinkedIn"
               >
-                <img 
-                  src="https://skillicons.dev/icons?i=linkedin" 
-                  alt="LinkedIn" 
-                  className="w-6 h-6 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
+                <img
+                  src="https://skillicons.dev/icons?i=linkedin"
+                  alt="LinkedIn"
+                  className="w-6 h-6 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                 />
               </a>
-              <a 
-                href="https://github.com/mostafiz365" 
-                target="_blank" 
+              <a
+                href="https://github.com/mostafiz365"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-14 h-14 bg-white/5 border border-white/10 text-white rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,122,255,0.2)] transition-all active:scale-95 group opacity-0"
                 title="GitHub"
               >
-                <img 
-                  src="https://skillicons.dev/icons?i=github" 
-                  alt="GitHub" 
-                  className="w-6 h-6 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
+                <img
+                  src="https://skillicons.dev/icons?i=github"
+                  alt="GitHub"
+                  className="w-6 h-6 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                 />
               </a>
             </div>
@@ -147,7 +147,7 @@ const Hero = () => {
               {[
                 { icon: 'code', title: '200+', sub: 'Hours of Code', class: '-top-4 -left-12' },
                 { icon: 'layers', title: '10+', sub: 'Projects Build', class: 'bottom-1 -left-12' },
-                { icon: 'terminal', title: '10+', sub: 'Tools Mastered', class: 'bottom-20 -right-20' }
+                // { icon: 'terminal', title: '10+', sub: 'Tools Mastered', class: 'bottom-20 -right-20' }
               ].map((card, i) => (
                 <div
                   key={i}

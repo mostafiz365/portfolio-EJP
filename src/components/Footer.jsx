@@ -16,7 +16,7 @@ const Footer = () => {
             </p>
             <a
               href="mailto:rahmanmostafiz365@gmail.com"
-              className="text-2xl md:text-3xl font-medium text-white hover:text-primary-container transition-colors underline underline-offset-8 decoration-white/20 hover:decoration-primary-container"
+              className="text-xl md:text-2xl font-medium text-white hover:text-primary-container transition-colors underline underline-offset-8 decoration-white/20 hover:decoration-primary-container"
             >
               rahmanmostafiz365@gmail.com
             </a>

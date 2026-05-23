@@ -29,7 +29,7 @@ const Projects = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-6">
         {projects.map((project, i) => (
           <motion.div
             key={i}
@@ -37,49 +37,60 @@ const Projects = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: i * 0.1 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="group relative"
+            className="group"
           >
             {/* Project Card */}
-            <div className="relative aspect-[16/10] rounded-[3rem] overflow-hidden bg-surface-container border border-white/5 transition-all duration-700 hover:border-primary-container/30 group">
-              {/* Background Image */}
-              <img
-                className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
-                alt={project.title}
-                src={project.img}
-              />
+            <div className="flex flex-col h-full bg-surface-container-low/20 backdrop-blur-sm border border-white/5 rounded-[2.5rem] p-5 transition-all duration-500 hover:border-primary/20 hover:bg-surface-container-low/40 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,122,255,0.05)] relative overflow-hidden">
+              {/* Background Glow Effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_50%_0%,rgba(173,198,255,0.08),transparent_50%)] pointer-events-none"></div>
 
-              {/* Animated Overlays */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_50%_120%,rgba(173,198,255,0.15),transparent_70%)]"></div>
+              {/* Image Container */}
+              <div className="relative aspect-[16/10] w-full rounded-[1.8rem] overflow-hidden bg-surface-variant/20 mb-6">
+                <img
+                  className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+                  alt={project.title}
+                  src={project.img}
+                />
+                <span className="absolute top-4 left-4 px-3.5 py-1.5 bg-black/60 backdrop-blur-md text-primary text-[10px] font-extrabold uppercase tracking-widest rounded-full border border-white/10 shadow-lg">
+                  {project.category}
+                </span>
+              </div>
 
               {/* Card Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-10 flex flex-col justify-end h-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <span className="w-10 h-[1px] bg-primary-container transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-100"></span>
-                    <span className="text-primary-container text-[10px] font-bold uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
-                      {project.category}
-                    </span>
-                  </div>
-                  <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tighter leading-none mb-10">
-                    {project.title.split(' ').map((word, idx) => (
-                      <span key={idx} className="inline-block mr-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500" style={{ transitionDelay: `${idx * 50 + 200}ms` }}>
-                        {word}
-                      </span>
-                    ))}
-                  </h3>
+              <div className="flex flex-col flex-grow">
+                {/* Title */}
+                <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight transition-colors duration-300 group-hover:text-primary-fixed-dim">
+                  {project.title}
+                </h3>
 
-                  <div className="flex items-center gap-4 transition-all duration-500 mt-6">
-                    <Link
-                      href={`/projects/${project.id}`}
-                      className="px-8 py-4 bg-white text-black rounded-2xl text-xs font-black hover:bg-primary-container hover:text-white transition-all active:scale-95 flex items-center gap-2"
+                {/* Short Description */}
+                <p className="text-on-surface-variant/80 text-sm leading-relaxed mt-3 mb-5 line-clamp-3">
+                  {project.desc}
+                </p>
+
+                {/* Tech Stack Badges */}
+                <div className="flex flex-wrap gap-2 mb-6 mt-auto">
+                  {project.stack.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 text-[11px] bg-white/5 border border-white/5 rounded-full text-on-surface-variant font-medium transition-all duration-300 hover:bg-primary-container/10 hover:border-primary-container/30 hover:text-primary-fixed-dim"
                     >
-                      VIEW DETAILS
-                      <span className="material-symbols-outlined text-sm">open_in_full</span>
-                    </Link>
-                  </div>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* View Details Link */}
+                <div className="pt-5 border-t border-white/5 flex items-center justify-between">
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className="inline-flex items-center gap-2 text-xs font-black tracking-wider uppercase text-white hover:text-primary transition-all duration-300 group/btn"
+                  >
+                    View Details
+                    <span className="material-symbols-outlined text-base transition-transform duration-300 group-hover/btn:translate-x-1">
+                      arrow_right_alt
+                    </span>
+                  </Link>
                 </div>
               </div>
             </div>
